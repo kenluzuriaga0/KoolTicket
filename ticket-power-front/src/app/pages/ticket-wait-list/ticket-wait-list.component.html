@@ -1,1 +1,16 @@
-<p>ticket-wait-list works!</p>
+<div class="content">
+    <div class="turno-main">
+        <div class="first-turno">
+            TURNO L1
+        </div>
+    </div>
+    <br>
+    <div class="bottom_div">
+        <hr>
+        <div class="waitlist">
+            @for (item of lista; track $index) {
+            <h1>{{item.caja}} - {{item.name}}</h1>
+            }
+        </div>
+    </div>
+</div>
