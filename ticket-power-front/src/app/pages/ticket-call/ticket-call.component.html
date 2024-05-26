@@ -1,1 +1,36 @@
-<p>ticket-call works!</p>
+<div class="mt-4 text-center">
+    <h1 class="text-xl font-bold mb-3"> Llamada de Turnos </h1>
+    <div class="flex justify-center">
+        <span class="mt-2 mr-1">Caja: </span>
+        <select class="block px-3 py-2 sm:w-auto text-gray-700 bg-white border border-gray-200 rounded-md shadow-sm w-52 focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="animals">
+            <option selected disabled>Seleccionar caja</option>
+            <option>N. 1</option>
+            <option>N. 2</option>
+            <option>N. 3</option>
+        </select>
+    </div>
+</div>
+<br />
+<hr>
+<div class="mt-4 text-center">
+    <div class="row">
+        <div class="col">
+            <a id="llam" href="#" onclick="llamarNuevo()" class="button1 btllamar">
+                <span class="llamar">Llamar Nuevo</span> turno <i class="far fa-calendar-plus"></i>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="flex justify-center">
+        <a id="rell" onclick="rellamar()" href="#" class="button1 btrellamar"><span class="llamar">ReLlamar</span> turno <i class="fas fa-undo ml-2"></i> </a>
+        <a id="aten" onclick="atender()" href="#" class="button1 btatender "><span class="llamar">Atender</span> turno<i class="fas fa-step-forward ml-1"></i> </a>
+        <a id="olvi" onclick="olvidar()" href="#" class="button1 btolvidar"><span class="llamar">Olvidar</span> turno <i class="fas fa-door-open"></i></a>
+    </div>
+    <br>
+    <div class="card bg-light mb-3" style="max-width: 23rem;">
+        <div class="card-header">Turno Actual</div>
+        <div id="turnoActual" class="card-body">
+            <!-- pendiente-->
+        </div>
+    </div>
+</div>

@@ -20,10 +20,26 @@ import { RouterLink } from '@angular/router';
       transition('open <=> closed', [
         animate('0.3s')
       ])
+    ]),
+    trigger('dropdownAnimation', [
+      transition(':enter', [
+        style({ height: '0px', opacity: 0 }),
+        animate('0.2s ease-out', style({ height: '*', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('0.2s ease-in', style({ height: '0px', opacity: 0 }))
+      ])
     ])
-  ]
+  ],
+  
 })
 export class SideBarComponent {
   @Input() sidebarState: 'open' | 'closed';
+
+  dropdownOpen: boolean = false;
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
 
 }

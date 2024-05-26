@@ -1,0 +1,144 @@
+.selectCM{
+    width: 500px;
+    max-width: 100%;
+    display: block;
+}
+.cajita{
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    font-size: 22px;
+}
+#cajita{
+    margin-left: 220px;
+    font-size: 22px;
+}
+.cajita-user{
+    margin-left: 26px;
+    font-size: 15px;
+}
+body{
+    font-family: sans-serif;
+    background-color:#020757; 
+    color: white;
+}
+.button1 {
+
+   
+    display:inline-block;
+    padding:1.1em 1.9em;
+    border:0.1em solid #080241;
+    margin:20px 11px;
+    border-radius:0.25em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#252525;
+    text-align:center;
+    transition: all 0.2s;
+    background: rgb(204, 213, 255);
+}
+
+a.button1:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color:#181717;
+    background-color:#a4a4a4;
+    box-shadow: 3px 3px 3px 1px #111111;
+}
+@media all and (max-width:250m){
+    button.button1{
+        display:block;
+        margin:0.4em auto;
+    }
+    .select-css{
+        width: 100%;
+    }
+    .cajita{
+        margin-left: 100px;
+    }
+    
+}
+hr{
+    color: white;
+    background-color: white;
+    margin-bottom: 0;
+
+}
+a.btllamar{
+    box-shadow: 3px 3px 3px 1px #474e78;
+    background-color: #8896e4;
+    color:#2b2b2b;
+}
+a.btrellamar{
+    box-shadow: 3px 3px 3px 1px #3a5d6d;
+    background-color: #4cbbee;
+    color:#2b2b2b;
+}
+a.btatender{
+    box-shadow: 3px 3px 3px 1px #3a6641;
+    background-color: #88e998;
+    color:#252525;
+}
+
+a.btolvidar{
+    box-shadow: 3px 3px 3px 1px #6e3838;
+    background-color: #e98888;
+    color:#2b2b2b;
+}
+
+.llamar{
+    font-weight: 600;
+    color: black;
+}
+
+
+.iconcito{
+    width: 20px;
+    margin-left: 12px;
+}
+
+.turno{
+    align-items: center;
+}
+
+/* Selector de CAJA */
+.select-css {
+    text-align-last: center;
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 90%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+
+    background-image: url('https://www.vippng.com/png/detail/210-2108608_down-arrow-html-white-arrow-down-psd.png'),
+        linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+}
+
+.card{
+    color:black;
+    margin-right:auto;
+    margin-left: auto;
+
+}
+
+

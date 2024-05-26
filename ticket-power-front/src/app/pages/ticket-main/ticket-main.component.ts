@@ -13,10 +13,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations: [
     trigger('contentAnimation', [
       state('shifted', style({
-        marginLeft: '16.5rem'  // Ajusta esto al ancho de tu sidebar
+        marginLeft: '14.2rem'  // Ajusta esto al ancho de tu sidebar
       })),
       state('normal', style({
-        marginLeft: '4.5rem'
+        marginLeft: '3rem'
       })),
       transition('shifted <=> normal', [
         animate('0.3s')

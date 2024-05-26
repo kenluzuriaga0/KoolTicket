@@ -1,11 +1,10 @@
 .side-bar {
-    width: 15rem;
+    width: 13.5rem;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 1.5rem 1rem;
+    padding: 1rem 0;
     box-sizing: border-box;
-    /* background-color: red; */
 }
 
