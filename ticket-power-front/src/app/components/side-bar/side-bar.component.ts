@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule, RouterLink],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.css',
   animations: [
@@ -23,9 +24,6 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class SideBarComponent {
-  sidebarState: 'open' | 'closed' = 'open';
+  @Input() sidebarState: 'open' | 'closed';
 
-  toggleSidebar() {
-    this.sidebarState = this.sidebarState === 'open' ? 'closed' : 'open';
-  }
 }
