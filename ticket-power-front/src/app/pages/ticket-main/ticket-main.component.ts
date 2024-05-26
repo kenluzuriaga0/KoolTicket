@@ -16,7 +16,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         marginLeft: '16.5rem'  // Ajusta esto al ancho de tu sidebar
       })),
       state('normal', style({
-        marginLeft: '5.5rem'
+        marginLeft: '4.5rem'
       })),
       transition('shifted <=> normal', [
         animate('0.3s')

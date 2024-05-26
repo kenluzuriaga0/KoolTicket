@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './ticket-dispenser.component.css'
 })
 export class TicketDispenserComponent {
+  buttons = ['CITAS MEDICAS', 'INFORMACIÓN', 'LABORATORIO', 'PRUEBAS COVID','OTROS SERVICIOS', 'DERIVACIONES']
 
 }
