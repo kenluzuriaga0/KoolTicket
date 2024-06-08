@@ -1,0 +1,40 @@
+<div class="max-w-1xl px-4 py-10 sm:px-6 lg:px-8 mx-auto ">
+    <div class="mb-8">
+        <h2 class="text-xl font-bold text-gray-800 dark:text-neutral-200 mb-2">
+          Gestión de colas
+        </h2>
+        <select class="block px-3 py-2 sm:w-auto text-gray-700 bg-white border border-gray-200 rounded-md shadow-sm w-52 focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="animals">
+            <option selected disabled>Seleccionar usuario de caja</option>
+            <option>KEN LUZURIAGA</option>
+            <option>DANIEL SANCHEZ</option>
+            <option>ALFREDO PACHECO</option>
+        </select>
+      </div>
+        
+<div class="flex flex-col"
+    [class.horizontal]="layout.dndHorizontal"
+    [dndHorizontal]="layout.dndHorizontal"
+    dndDropzone
+    dndEffectAllowed="copyMove"
+    (dndDrop)="onDrop($event, buttonsList)">
+
+    <div dndPlaceholderRef  class="flex flex-row mb-2 border-gray-400 border"> </div>
+
+    <li *ngFor="let item of buttonsList" class="flex flex-row mb-2 border-gray-400"
+        [dndDraggable]="item"
+        [dndDisableIf]="item.disable"
+        [dndEffectAllowed]="item.effectAllowed"
+        (dndCanceled)="onDragged(item, buttonsList, 'none')"
+        (dndCopied)="onDragged(item, buttonsList, 'copy')"
+        (dndEnd)="onDragEnd($event)"
+        (dndLinked)="onDragged(item, buttonsList, 'link')"
+        (dndMoved)="onDragged(item, buttonsList, 'move')"
+        (dndStart)="onDragStart($event)">
+        <div
+            class="shadow border select-none cursor-move bg-slate-100  rounded-md flex flex-1 items-center p-4 hover:bg-slate-200 ">
+            {{item.content}}
+        </div>
+    </li>
+</div>
+
+</div>
