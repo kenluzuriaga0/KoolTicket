@@ -7,6 +7,9 @@ import { TicketDispenserComponent } from './pages/ticket-dispenser/ticket-dispen
 import { TicketWaitListComponent } from './pages/ticket-wait-list/ticket-wait-list.component';
 import { SettingsComponent } from './pages/settings-admin/settings.component';
 import { TicketMainComponent } from './pages/ticket-main/ticket-main.component';
+import { CreateNewUserComponent } from './pages/settings-admin/create-new-user/create-new-user.component';
+import { ListUsersComponent } from './pages/settings-admin/list-users/list-users.component';
+import { ManageQueueComponent } from './pages/settings-admin/manage-queue/manage-queue.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
@@ -18,7 +21,11 @@ export const routes: Routes = [
         { path: 'call', component: TicketCallComponent },
         { path: 'dispenser', component: TicketDispenserComponent },
         { path: 'waitlist', component: TicketWaitListComponent},
-        { path: 'settings', component: SettingsComponent },
+        { path: 'settings', component: SettingsComponent},
+        { path: 'users', component: ListUsersComponent },
+        { path: 'create', component: CreateNewUserComponent },
+        { path: 'queue', component: ManageQueueComponent }
+       
 
     ]
     }, // TODO: Colocar un child ":branchId"
