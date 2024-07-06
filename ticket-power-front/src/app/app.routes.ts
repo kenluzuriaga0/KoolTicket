@@ -12,31 +12,36 @@ import { ListUsersComponent } from './pages/settings/list-users/list-users.compo
 import { ManageQueueComponent } from './pages/settings/manage-queue/manage-queue.component';
 import { ListButtonsComponent } from './pages/settings/list-buttons/list-buttons.component';
 import { FormButtonComponent } from './pages/settings/form-button/form-button.component';
+import { FormBranchComponent } from './pages/settings/form-branch/form-branch.component';
+import { ListBranchesComponent } from './pages/settings/list-branches/list-branches.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
     { path: 'branch', component: SelectBranchComponent },
-    { path: 'config', component: SettingsComponent,},
-    { path: 'ticket', component: TicketMainComponent ,
-    children:[
-        { path: 'call', component: TicketCallComponent },
-        { path: 'dispenser', component: TicketDispenserComponent },
-        { path: 'waitlist', component: TicketWaitListComponent},
-        { path: 'queue', component: ManageQueueComponent },
-        { path: 'config', component: SettingsComponent,
-            children:[
-                { path: 'user', component: ListUsersComponent },
-                { path: 'user/:id', component: FormUserComponent },
-                { path: 'user/create', component: FormUserComponent },
-                { path: 'button', component: ListButtonsComponent },
-                { path: 'button/create', component: FormButtonComponent },
-                { path: 'button/:id', component: FormButtonComponent },
-            ]
-        },
-    ]
-    }, // TODO: Colocar un child ":branchId"
+    { path: 'config', component: SettingsComponent, },
+    {
+        path: 'ticket', component: TicketMainComponent,
+        children: [
+            { path: 'call', component: TicketCallComponent },
+            { path: 'dispenser', component: TicketDispenserComponent },
+            { path: 'waitlist', component: TicketWaitListComponent },
+            { path: 'queue', component: ManageQueueComponent },
+            {
+                path: 'config', component: SettingsComponent,
+                children: [
+                    { path: 'user', component: ListUsersComponent },
+                    { path: 'user/:id', component: FormUserComponent },
+                    { path: 'user/create', component: FormUserComponent },
+                    { path: 'button', component: ListButtonsComponent },
+                    { path: 'button/create', component: FormButtonComponent },
+                    { path: 'button/:id', component: FormButtonComponent },
+                    { path: 'branch/create', component: FormBranchComponent },
+                    { path: 'branch', component: ListBranchesComponent },
+                    { path: 'branch/:id', component: FormBranchComponent },
+                ]
+            },
+        ]
+    },
     { path: '**', component: NotFoundComponent },
-
-   
 ];
