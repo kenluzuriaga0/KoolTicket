@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-create-new-user',
+  selector: 'app-form-user',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './create-new-user.component.html',
-  styleUrl: './create-new-user.component.css'
+  templateUrl: './form-user.component.html',
+  styleUrl: './form-user.component.css'
 })
-export class CreateNewUserComponent {
+export class FormUserComponent {
 
 }

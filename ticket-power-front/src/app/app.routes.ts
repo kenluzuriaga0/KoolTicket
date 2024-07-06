@@ -7,27 +7,33 @@ import { TicketDispenserComponent } from './pages/ticket-main/ticket-dispenser/t
 import { TicketWaitListComponent } from './pages/ticket-main/ticket-wait-list/ticket-wait-list.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { TicketMainComponent } from './pages/ticket-main/ticket-main.component';
-import { CreateNewUserComponent } from './pages/settings/create-new-user/create-new-user.component';
+import { FormUserComponent } from './pages/settings/form-user/form-user.component';
 import { ListUsersComponent } from './pages/settings/list-users/list-users.component';
 import { ManageQueueComponent } from './pages/settings/manage-queue/manage-queue.component';
+import { ListButtonsComponent } from './pages/settings/list-buttons/list-buttons.component';
+import { FormButtonComponent } from './pages/settings/form-button/form-button.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
     { path: 'branch', component: SelectBranchComponent },
-    { path: 'settings', component: SettingsComponent},
+    { path: 'config', component: SettingsComponent,},
     { path: 'ticket', component: TicketMainComponent ,
     children:[
         { path: 'call', component: TicketCallComponent },
         { path: 'dispenser', component: TicketDispenserComponent },
         { path: 'waitlist', component: TicketWaitListComponent},
-        { path: 'settings', component: SettingsComponent},
-        { path: 'user', component: ListUsersComponent },
-        { path: 'user/:id', component: CreateNewUserComponent },
-        { path: 'create', component: CreateNewUserComponent },
         { path: 'queue', component: ManageQueueComponent },
-        { path: 'button', component: ListUsersComponent },
-        { path: 'button/:id', component: CreateNewUserComponent },
+        { path: 'config', component: SettingsComponent,
+            children:[
+                { path: 'user', component: ListUsersComponent },
+                { path: 'user/:id', component: FormUserComponent },
+                { path: 'user/create', component: FormUserComponent },
+                { path: 'button', component: ListButtonsComponent },
+                { path: 'button/create', component: FormButtonComponent },
+                { path: 'button/:id', component: FormButtonComponent },
+            ]
+        },
     ]
     }, // TODO: Colocar un child ":branchId"
     { path: '**', component: NotFoundComponent },
