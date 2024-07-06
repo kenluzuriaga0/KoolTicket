@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SideBarComponent } from '../../components/side-bar/side-bar.component';
+import { SideBarComponent } from '../../../components/side-bar/side-bar.component';
 import { TicketDispenserComponent } from '../ticket-dispenser/ticket-dispenser.component';
 import { TicketWaitListComponent } from '../ticket-wait-list/ticket-wait-list.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
