@@ -1,2 +1,2 @@
-# turnero
-Ticket dispenser with queue management
+# KoolTicket 🎫
+Ticket dispenser with queue management, ticket call, ticket list view and more...

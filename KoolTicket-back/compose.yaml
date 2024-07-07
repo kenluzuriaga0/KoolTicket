@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: always
+    ports:
+     - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOST_AUTH_METHOD:md5
+      - POSTGRES_INITDB_ARGS=--auth-host=md5
+    volumes:
+      - "dbpostgres:/var/lib/postgresql/data"
+  pgadmin:
+     image: dpage/pgadmin4:latest
+     ports:
+       - "80:80"
+     environment:
+       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+       - PGADMIN_DEFAULT_PASSWORD=qwerty
+     volumes:
+      - "pgadmin:/var/lib/pgadmin"
+     depends_on:
+       - postgres
+volumes:
+  dbpostgres:
+  pgadmin:
+#Levanta un postgres 16 con pgAdmin usando un volumen nombrado 'dbpostgres'
