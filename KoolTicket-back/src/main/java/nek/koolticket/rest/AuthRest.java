@@ -1,4 +1,5 @@
 package nek.koolticket.rest;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class AuthRest {
     @Builder
     public record AuthResponse(String token) {
     }
-    
+
     public record AuthRequest(String username, String password) {
     }
 
