@@ -2,15 +2,11 @@ package nek.koolticket.service;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import nek.koolticket.config.JwtService;
 import nek.koolticket.dtos.UserRegisterDto;
-import nek.koolticket.models.Roles;
 import nek.koolticket.models.Usuario;
 import nek.koolticket.repos.UsuariosRepo;
 import nek.koolticket.rest.AuthRest.AuthRequest;

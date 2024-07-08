@@ -16,12 +16,13 @@ public class AuthRest {
     @Builder
     public record AuthResponse(String token) {
     }
+    
     public record AuthRequest(String username, String password) {
     }
 
     private final AuthService authService;
     
-    @PostMapping(value = "login")
+    @PostMapping("login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request)
     {
         return ResponseEntity.ok(authService.login(request));

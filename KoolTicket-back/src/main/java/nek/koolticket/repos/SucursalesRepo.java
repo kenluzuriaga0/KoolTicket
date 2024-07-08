@@ -1,5 +1,6 @@
 package nek.koolticket.repos;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
@@ -12,6 +13,7 @@ public interface SucursalesRepo  extends CrudRepository<Sucursal, Integer>{
     
     Optional<Sucursal> findById(Integer id);
 	Sucursal findTop1ByNombre(String nombre);
+	List<Sucursal> findAllSucursalByEstado(Boolean estado);
     
 }
 
