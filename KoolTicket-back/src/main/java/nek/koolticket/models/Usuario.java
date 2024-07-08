@@ -1,5 +1,6 @@
 package nek.koolticket.models;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,10 +23,10 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 @Builder
 @AllArgsConstructor
-public class Usuarios  implements UserDetails {
+public class Usuario  implements UserDetails {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -40,9 +41,15 @@ public class Usuarios  implements UserDetails {
     @Column(name = "password")
     private String password;
     @Column(name = "nombres")
+    @Basic(optional = false)
     private String nombres;
     @Column(name = "apellidos")
+    @Basic(optional = false)
     private String apellidos;
+    @Column(name = "cajaPrioridad")
+    private String cajaPrioridad;
+    @Column(name = "creado_en")
+    private LocalDateTime creadoEn;
     @Column(name = "estado")
     private Boolean estado;
     @JoinColumn(name = "id_rol", referencedColumnName = "id")
@@ -50,14 +57,14 @@ public class Usuarios  implements UserDetails {
     private Roles idRol;
 
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(Integer id) {
+    public Usuario(Integer id) {
         this.id = id;
     }
 
-    public Usuarios(Integer id, String username, String password) {
+    public Usuario(Integer id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;

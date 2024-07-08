@@ -30,8 +30,10 @@ public class Roles implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
+    @Column(name = "estado")
+    private Boolean estado;
     @OneToMany(mappedBy = "idRol")
-    private List<Usuarios> usuariosList;
+    private List<Usuario> usuariosList;
 
     public Roles() {
     }
@@ -40,9 +42,10 @@ public class Roles implements Serializable {
         this.id = id;
     }
 
-    public Roles(Integer id, String nombre) {
+    public Roles(Integer id, String nombre, Boolean estado) {
         this.id = id;
         this.nombre = nombre;
+        this.estado = estado;
     }
 
 

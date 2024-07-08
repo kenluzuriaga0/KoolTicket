@@ -4,7 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import nek.koolticket.models.Usuarios;
+import nek.koolticket.models.Usuario;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -22,11 +22,11 @@ public class JwtService {
     @Value("${jwt.secret}")
     private String SECRET_KEY;
 
-    public String getToken(Usuarios user) {
+    public String getToken(Usuario user) {
         return getToken(new HashMap<>(), user);
     }
 
-    private String getToken(Map<String,Object> extraClaims, Usuarios user) {
+    private String getToken(Map<String,Object> extraClaims, Usuario user) {
         return Jwts
             .builder()
             .claims(extraClaims)

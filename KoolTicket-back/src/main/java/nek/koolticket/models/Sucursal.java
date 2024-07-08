@@ -13,8 +13,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "sucursales")
-public class Sucursales implements Serializable {
+@Table(name = "sucursal")
+public class Sucursal implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,12 @@ public class Sucursales implements Serializable {
     @Column(name = "id")
     private Integer id;
     @Column(name = "nombre")
+    @Basic(optional = false)
     private String nombre;
     @Column(name = "direccion")
     private String direccion;
     @Column(name = "orden")
-    private Integer orden;
+    private Integer orden; // secuencia
     @Column(name = "estado")
     private Boolean estado;
 }

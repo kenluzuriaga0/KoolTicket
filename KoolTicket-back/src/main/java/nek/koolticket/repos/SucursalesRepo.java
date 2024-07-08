@@ -5,13 +5,13 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import nek.koolticket.models.Sucursales;
+import nek.koolticket.models.Sucursal;
 
 @Repository
-public interface SucursalesRepo  extends CrudRepository<Sucursales, Integer>{
+public interface SucursalesRepo  extends CrudRepository<Sucursal, Integer>{
     
-    Optional<Sucursales> findById(Integer id);
-	Sucursales findTop1ByNombre(String nombre);
+    Optional<Sucursal> findById(Integer id);
+	Sucursal findTop1ByNombre(String nombre);
     
 }
 

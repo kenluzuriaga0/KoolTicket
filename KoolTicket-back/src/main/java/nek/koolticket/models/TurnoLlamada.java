@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 /**
  *
  * @author nek
@@ -20,25 +21,25 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "turno_llamada")
+@NoArgsConstructor
 public class TurnoLlamada implements Serializable {
 
-    @Column(name = "llamada_fecha")
-    private LocalDateTime llamadaFecha;
-
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
-    @Column(name = "llamada_usuario")
-    private String llamadaUsuario;
+    @Column(name = "fecha_llamada")
+    @Basic(optional = false)
+    private LocalDateTime fechaLlamada;
+    @Column(name = "usuario_llamada")
+    @Basic(optional = false)
+    private String usuarioLlamada;
     @JoinColumn(name = "id_turno", referencedColumnName = "id")
     @ManyToOne
     private TurnosGenerados idTurno;
-
-    public TurnoLlamada() {
-    }
 
     public TurnoLlamada(Long id) {
         this.id = id;

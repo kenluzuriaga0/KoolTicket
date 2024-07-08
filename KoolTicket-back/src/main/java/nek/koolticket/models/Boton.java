@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
@@ -19,8 +20,9 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "botones")
-public class Botones implements Serializable {
+@Table(name = "boton")
+@NoArgsConstructor
+public class Boton implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -28,10 +30,14 @@ public class Botones implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    @Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
-    @Column(name = "descripcion")
-    private String descripcion;
+    @Basic(optional = false)
+    @Column(name = "prefijo_ticket")
+    private String prefijoTicket;
+    @Column(name = "color")
+    private String color;
     @Column(name = "estado")
     private Boolean estado;
     @OneToMany(mappedBy = "idBoton")

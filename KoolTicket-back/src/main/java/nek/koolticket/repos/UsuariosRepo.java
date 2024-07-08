@@ -9,21 +9,21 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import nek.koolticket.models.Roles;
-import nek.koolticket.models.Usuarios;
+import nek.koolticket.models.Usuario;
 
 /**
  *
  * @author kenlu
  */
 @Repository
-public interface UsuariosRepo extends CrudRepository<Usuarios, Integer> {
-    Optional<Usuarios> findTopByUsernameAndEstado(String username, Boolean estado);
+public interface UsuariosRepo extends CrudRepository<Usuario, Integer> {
+    Optional<Usuario> findTopByUsernameAndEstado(String username, Boolean estado);
 
-    @Query(value = "UPDATE usuarios set caja_prioridad = 'FIFO' ", nativeQuery = true)
+    @Query(value = "UPDATE usuario set caja_prioridad = 'FIFO' ", nativeQuery = true)
 	@Modifying(clearAutomatically = true)
 	@Transactional
 	public void updateFIFO();
 
-	List<Usuarios> findByIdRol(Roles id);
+	List<Usuario> findByIdRol(Roles id);
 
 }
