@@ -16,6 +16,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
@@ -25,6 +26,7 @@ import lombok.Data;
 @Entity
 @Table(name = "usuario")
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class Usuario  implements UserDetails {
 
@@ -55,10 +57,6 @@ public class Usuario  implements UserDetails {
     @JoinColumn(name = "id_rol", referencedColumnName = "id")
     @ManyToOne
     private Roles idRol;
-
-
-    public Usuario() {
-    }
 
     public Usuario(Integer id) {
         this.id = id;

@@ -25,5 +25,6 @@ public interface UsuariosRepo extends CrudRepository<Usuario, Integer> {
 	public void updateFIFO();
 
 	List<Usuario> findByIdRol(Roles id);
+	Optional<Usuario> findByUsernameAndEstado(String username, Boolean estado);
 
 }
