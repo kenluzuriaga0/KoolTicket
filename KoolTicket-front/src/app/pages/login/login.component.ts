@@ -43,7 +43,10 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/branch']) // cambio de pagina
           })
         },
-        error: error => this.showError('Digite credenciales válidas')
+        error: error =>{ 
+          this.showError('Digite credenciales válidas')
+          this._auth.logout();
+        }
       });
     } else {
       this.showError('Lleno los campos de login');
