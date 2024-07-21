@@ -4,3 +4,12 @@ export interface Sucursal {
     direccion: string;
     orden: number;
 }
+
+export interface Usuario {
+    id: number;
+    username: string;
+    nombres: string;
+    apellidos: string;
+    cajaPrioridad: string;
+}
+

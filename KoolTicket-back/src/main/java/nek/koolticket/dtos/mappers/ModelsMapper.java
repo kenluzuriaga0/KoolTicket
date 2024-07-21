@@ -13,8 +13,9 @@ import nek.koolticket.models.Usuario;
 public interface  ModelsMapper {
     
     UsuarioDto mapEntityToDto(Usuario user);
+    List<UsuarioDto> userMapEntityToDtoList(List<Usuario> user);
     // Usuario mapDtoToDtoEntity(UsuarioDto user);
-    List<SucursalDto> mapEntityToDtoList(List<Sucursal> user);
+    List<SucursalDto> branchMapEntityToDtoList(List<Sucursal> branches);
     // Sucursal mapEntityToDto(SucursalDto user);
 
 }

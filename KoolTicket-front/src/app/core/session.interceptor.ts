@@ -18,12 +18,8 @@ export class SessionInterceptor implements HttpInterceptor {
       catchError((err: any) => {
         if (err instanceof HttpErrorResponse) {
           // Handle HTTP errors
-          if (err.status === 401) {
             this._authService.logout();
             this.router.navigate(['login']);
-          } else {
-            console.error('HTTP error:', err); // Handle other HTTP error codes
-          }
         } else {
           console.error('An error occurred:', err); // Handle non-HTTP errors
         }

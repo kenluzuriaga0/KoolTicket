@@ -19,6 +19,6 @@ public class SucursalService {
 
     public List<SucursalDto> findAllSucursalByEstado(){
         List<Sucursal> branches = sucursalesRepo.findAllSucursalByEstado(true);
-         return  mapper.mapEntityToDtoList(branches);
+         return  mapper.branchMapEntityToDtoList(branches);
     }
 }

@@ -2,6 +2,9 @@ package nek.koolticket.repos;
 
 import java.util.List;
 import java.util.Optional;
+
+import javax.swing.text.html.Option;
+
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -25,6 +28,8 @@ public interface UsuariosRepo extends CrudRepository<Usuario, Integer> {
 	public void updateFIFO();
 
 	List<Usuario> findByIdRol(Roles id);
+	Optional<Usuario> findById(Integer id);
+	List<Usuario> findAllByEstado(Boolean estado);
 	Optional<Usuario> findByUsernameAndEstado(String username, Boolean estado);
 
 }

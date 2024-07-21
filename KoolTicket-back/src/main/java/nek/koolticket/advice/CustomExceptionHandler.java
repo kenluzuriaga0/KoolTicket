@@ -40,6 +40,10 @@ public class CustomExceptionHandler {
             errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(403),ex.getMessage());
             errorDetail.setProperty("access_denied_reason", "JWT token already expired");
         }
+        if (errorDetail == null){
+            ex.printStackTrace();
+            errorDetail = ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(500),ex.getMessage());
+        }
         return errorDetail;
     }
 
