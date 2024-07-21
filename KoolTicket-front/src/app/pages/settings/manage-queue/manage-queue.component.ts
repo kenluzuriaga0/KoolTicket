@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DndDropEvent, DndModule, DropEffect, EffectAllowed } from 'ngx-drag-drop';
 import { polyfill } from 'mobile-drag-drop';
 import { scrollBehaviourDragImageTranslateOverride } from "mobile-drag-drop/scroll-behaviour";
+import { ButtonService } from '../../../services/button.service';
+import { Boton } from '../../../core/domain';
 
 interface DraggableItem { 
   // Se necesita estos atributos para hacer un drag & drop
@@ -37,46 +39,25 @@ catch(e){}
 })
 export class ManageQueueComponent {
 
-  buttons = ['CITAS MEDICAS', 'INFORMACIÓN', 'LABORATORIO', 'PRUEBAS COVID', 'OTROS SERVICIOS', 'DERIVACIONES']
+  _button:ButtonService = inject(ButtonService);
+  buttons:Boton[] = [];
+  buttonsList: DraggableItem[] = []
 
-  buttonsList: DraggableItem[] = [
-    {
-      content: 'CITAS MEDICAS',
-      effectAllowed: 'all',
-      disable: false,
-      handle: false,
-    },
-    {
-      content: 'INFORMACIÓN',
-      effectAllowed: 'all',
-      disable: false,
-      handle: false,
-    },
-    {
-      content: 'LABORATORIO',
-      effectAllowed: 'all',
-      disable: false,
-      handle: false,
-    },
-    {
-      content: 'PRUEBAS COVID',
-      effectAllowed: 'all',
-      disable: false,
-      handle: false,
-    },
-    {
-      content: 'OTROS SERVICIOS',
-      effectAllowed: 'all',
-      disable: false,
-      handle: false,
-    },
-    {
-      content: 'DERIVACIONES',
-      effectAllowed: 'all',
-      disable: false,
-      handle: false,
-    },
-  ]
+  ngOnInit(): void {
+    this._button.getAllButtons().subscribe((data:any)=>{
+        this.buttons = data;
+        this.buttons = this.buttons.filter(b=>b.estado==true);
+        this.buttons.forEach(btn => {
+          // Asi es la erstructura para el Drag&Drop
+          this.buttonsList.push({
+            content: btn.nombre.toUpperCase(),
+            effectAllowed: 'all',
+            disable: false,
+            handle: false,
+          });
+        });
+    });
+  }
 
   horizontalLayoutActive: boolean = false;
   private readonly verticalLayout: DropzoneLayout = {
@@ -106,14 +87,11 @@ export class ManageQueueComponent {
   }
 
   onDragStart(event:DragEvent) {
-
     console.log("drag started", JSON.stringify(event, null, 2));
   }
 
   onDragEnd(event:DragEvent) {
-
     console.log("drag ended", JSON.stringify(event, null, 2));
   }
-
 
 }

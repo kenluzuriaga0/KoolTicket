@@ -13,3 +13,13 @@ export interface Usuario {
     cajaPrioridad: string;
 }
 
+export interface Boton {
+    id: number;
+    nombre: string;
+    prefijoTicket: string;
+    color: string;
+    orden: number;
+    estado: boolean;
+}
+
+

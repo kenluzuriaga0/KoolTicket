@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ButtonService } from '../../../services/button.service';
+import { Boton } from '../../../core/domain';
 
 @Component({
   selector: 'app-list-buttons',
@@ -11,4 +13,12 @@ import { RouterLink } from '@angular/router';
 })
 export class ListButtonsComponent {
 
+  _button:ButtonService = inject(ButtonService);
+  buttons:Boton[] = [];
+
+  ngOnInit(): void {
+    this._button.getAllButtons().subscribe((data:any)=>{
+        this.buttons = data;
+    });
+  }
 }
