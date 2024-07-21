@@ -38,6 +38,8 @@ public class Boton implements Serializable {
     private String prefijoTicket;
     @Column(name = "color")
     private String color;
+    @Column(name = "orden")
+    private Integer orden;
     @Column(name = "estado")
     private Boolean estado;
     @OneToMany(mappedBy = "idBoton")

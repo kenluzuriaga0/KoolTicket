@@ -11,7 +11,7 @@ import nek.koolticket.service.SucursalService;
 @RequestMapping("/branch")
 @RestController
 @AllArgsConstructor
-public class SucursalRest {
+public class BranchRest {
 
     SucursalService sucursalService;
 
