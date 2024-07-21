@@ -18,12 +18,11 @@ public class KoolTicketApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				// Instancia de pruebas
 				registry.addMapping("/**").allowedOrigins(
-								"http://localhost:4200"
-								//"https://demo.up.railway.app" // Podemos poner mas
-								)
-						.allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS");
+				"http://localhost:4200"
+				// "https://demo.up.railway.app" // Podemos poner mas
+				)
+				.allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS");
 			}
 		};
 	}

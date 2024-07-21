@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import nek.koolticket.dtos.SucursalDto;
+import nek.koolticket.dtos.mappers.ModelsMapper;
 import nek.koolticket.models.Sucursal;
 import nek.koolticket.repos.SucursalesRepo;
 
@@ -12,9 +14,11 @@ import nek.koolticket.repos.SucursalesRepo;
 @AllArgsConstructor
 public class SucursalService {
 
-    SucursalesRepo sucursalesRepo;
+    private ModelsMapper mapper;
+    private SucursalesRepo sucursalesRepo;
 
-    public List<Sucursal> findAllSucursalByEstado(){
-        return sucursalesRepo.findAllSucursalByEstado(true);
+    public List<SucursalDto> findAllSucursalByEstado(){
+        List<Sucursal> branches = sucursalesRepo.findAllSucursalByEstado(true);
+         return  mapper.mapEntityToDtoList(branches);
     }
 }

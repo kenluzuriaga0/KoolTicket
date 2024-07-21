@@ -22,6 +22,9 @@ public class JwtService {
     @Value("${jwt.secret}")
     private String SECRET_KEY;
 
+    @Value("${app.jwt-expiration-milliseconds}")
+    private int jwtExpirationInMs;
+
     public String getToken(Usuario user) {
         return getToken(new HashMap<>(), user);
     }
@@ -35,7 +38,7 @@ public class JwtService {
             .claim("lastName", user.getApellidos())
             .subject(user.getUsername())
             .issuedAt(new Date(System.currentTimeMillis()))
-            .expiration(new Date(System.currentTimeMillis()+1000*60*24))
+            .expiration(new Date(System.currentTimeMillis() + this.jwtExpirationInMs))
             .signWith(getKey())
             .compact();
     }
