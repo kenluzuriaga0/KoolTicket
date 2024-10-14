@@ -1,9 +1,19 @@
+<div id="print-ticket" style="display: none;" *ngIf="btnCurrent()?.id"> 
+    <p class="img-ticket">
+        <!--img  src="assets/medilink.png" alt=""-->
+    </p>
+    <div class="titulo">Turno {{ btnCurrent().nombre }}</div>
+    <div id="info"></div>
+    <span id="fecha" class="time"></span> <br>
+    <span class="web">¡Gracias por preferirnos!</span> <span class="web"> | empresa.com.ec</span>
+</div>
+
 <div [class]="'container '+ classGrid">
 
     @for (btn of buttons; track $index) {
-    <a
+    <button ngxPrint (click)="setBtnCurrent(btn)" printSectionId="print-ticket" printTitle="Ticket Print"  
         class="btn inline-block rounded border border-indigo-600 bg-blue-500 px-12 py-3 text-lg font-medium text-center text-white hover:bg-blue-400  active:text-indigo-500">
         {{btn.nombre.toUpperCase() }}
-    </a>
+    </button>
     }
 </div>

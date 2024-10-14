@@ -44,8 +44,8 @@ export class LoginComponent implements OnInit {
           })
         },
         error: error =>{ 
-          this.showError('Digite credenciales válidas')
           this._auth.logout();
+          this.showError('Digite credenciales válidas')
         }
       });
     } else {
